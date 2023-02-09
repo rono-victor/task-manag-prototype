@@ -26,18 +26,13 @@ const firebaseConfig = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-const main=document.getElementById("main");
+const main = document.getElementById("main");
 const createacc = document.getElementById("create-acc");
+
+
+
+
+
 
 const signupButton =document.getElementById("sign-up");
 const returnBtn = document.getElementById("return-btn");
