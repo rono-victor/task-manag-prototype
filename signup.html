@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="signup.js" defer></script>
+    <title>Login / Register</title>
+</head>
+<body>
+    
+        <header>
+            <nav class="nav">
+                <a href="index.html">
+                    <img src="R.jpeg" alt="Task managemnet logo">
+                </a>
+                <div class="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+    
+                <div class="nav__link hide">BEM
+                    <a href="index.html">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                    <a href="signup.html">Login</a>
+    
+                </div>
+
+            </nav>
+        </header>
+    
+    <!-- login /  register HTML logic -->
+    <div class = "login-container">
+        <div id="main">
+            <h1>Sign In</h1>
+            <input id="email" type="text" placeholder ="Email"></input>
+            <input id="password" type="password" placeholder ="Password"></input>
+            <button id="submit">Login</button>
+            <p><span>or</span></p>
+            <button id="sign-up">Sign Up</button>
+        </div>
+
+        <div id="create-acc">
+            <h1>create an account</h1>
+            <input id="email-signup" type="email" placeholder="Email*"></input>
+            <input id="confirm-email-signup" type="email" placeholder="Confirm Email*"></input>
+            <input id="password-signup" type="password" placeholder="Password"></input>
+            <input  id="confirm-password-signup" type="password" placeholder="Confirm Password"></input>
+            <button id="create-acc-btn">Create Account</button>
+            <button id="return-btn">Return to login</button>
+
+
+
+        </div>
+    </div>
+     
+</body>
+</html>
