@@ -22,20 +22,89 @@ const firebaseConfig = {
   const auth = getAuth()
 
 
-
-
-
-
 const main = document.getElementById("main");
 const createacc = document.getElementById("create-acc");
 
+const emailinput = document.getElementById("email")
+const passwordinput = document.getElementById("password")
+const submitButton = document.getElementById("submit")
 
 
-
+const signupEmailIn = document.getElementById("email-signup")
+const signupPasswordIn = document.getElementById("password-signup")
+const confirmSignupEmailIn = document.getElementById("confirm-email-signup")
+const confirmSignupPassword = document.getElementById("confirm-password-signup")
+const createaccbtn = document.getElementById("create-acc-btn")
 
 
 const signupButton =document.getElementById("sign-up");
 const returnBtn = document.getElementById("return-btn");
+
+var email;
+password,
+signupEmail,
+signupPassword,
+confirmSignupEmail,
+confirmSignupPassword;
+
+
+createaccbtn.addEventListener("click", () => {
+    var isVerified = true;
+
+    signupEmail = signupEmailIn.value;
+    confirmSignupEmail = confirmSignupEmailIn.value;
+    if ( signupEmail != confirmSignupEmailIn ) {
+        window.alert("Email fields do not match. Try again.");
+        isVerified = false;
+    }
+
+    signupPassword = signupPasswordIn.value;
+    confirmSignupPassword = confirmSignupPasswordIn.value;
+    if ( signupPassword != confirmSignupPassword) {
+        window.alert("Password fields do not match. Try again.");
+        isVerified = false;
+    }
+
+    if (
+        signupEmail == null ||
+        confirmSignupEmail == null ||
+        signupPassword == null ||
+        confirmSignupPassword == null ||
+    ) {
+        window.alert("Please fill out all required fields.");
+        isVerified = false;
+    }
+
+    createUserWithEmailAndPassword(auth, signupEmail, signupPassword).then(() => {
+        window.alert("Successful Account Created");
+        window.location = "./createTask.html";
+
+    }) .catch ((error) => {
+        const errorMessage = error.message
+        window.alert(errorMessage)
+        //window.alert("Error Occurred. Try again")
+    }) ;
+});
+
+submitButton.addEventListener("click", function (){
+    email = emailinput.value
+    password = passwordinput.value
+
+    signInWithEmailAndPassword(auth, email, password).then(() => {
+        window.alert("Success! Welcome back");
+        window.location = "./createTask.html";
+
+    }).catch((error) => {
+        const errorMessage = error.message;
+            window.alert(errorMessage);
+
+            //window.alert("Error Occurred. Try Again")
+    });
+});
+
+
+
+
 
 signupButton.addEventListener("click", () => {
     main.style.display = "none";
